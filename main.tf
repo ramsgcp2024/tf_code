@@ -34,6 +34,8 @@ resource "google_compute_instance" "tf-vm-instances" {
   zone = each.value.zone
   machine_type = each.value.instance_type
   tags = [each.key]
+
+  # We have copied from console while creating VM it shows as "Equalent command line"
     boot_disk {
     device_name = "instance-20240618-165751"
 
