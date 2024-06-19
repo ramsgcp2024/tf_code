@@ -24,17 +24,21 @@ variable "ports" {
 
 variable "instances" {
   default = {
-    "jenkins-master" = {
-      instance_type = "e2-medium"
+    "jenkins-master" = {  
+      instance_type = "e2-medium" 
       zone = "us-west4-a"
     }
     "jenkins-slave" = {
       instance_type = "n1-standard-1"
       zone = "us-west4-b"
     }
-    "sonar" = {
+    "ansible" = {
       instance_type = "e2-medium"
       zone = "us-west4-a"
     }
   }   
+}
+
+variable "vm_user" {
+  default = "ramsgcp23"
 }
