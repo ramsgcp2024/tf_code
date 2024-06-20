@@ -1,0 +1,19 @@
+---
+- hosts: jenkins-slave
+  become: yes
+  tasks:
+    - name: Updating the Registry
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+    - name: Install java for slave
+      apt: 
+        name: openjdk-11-jre
+        state: present
+    - name: Create a home directory for jenkins in slave
+      file:
+        path: /home/ramsgcp23/jenkins
+        state: directory
+        mode: '0755'
+        owner: ramsgcp23
+        group: ramsgcp23
