@@ -10,5 +10,12 @@ ansible_ssh_private_key_file=/home/ramsgcp23/ssh-key
 ansible_user=ramsgcp23
 ansible_ssh_private_key_file=/home/ramsgcp23/ssh-key
 
+[sonarqube]
+10.1.0.5
+[sonarqube:vars]
+ansible_user=ransgcp23
+ansible_ssh_private_key_file=/home/ramsgcp23/ssh-key
+
+
 ******copy the private key data from local to remote machine name as "ssh-key" then run the command " chmod 400 ssh-key " *****
 

@@ -17,3 +17,21 @@
         mode: '0755'
         owner: ramsgcp23
         group: ramsgcp23
+    - name: Donwload the JAVA package
+      ansible.builtin.get_url:
+        url: https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz
+        dest: /opt/
+    - name: extracting the JAVA
+      ansible.builtin.unarchive:
+        src: /opt/openjdk-17.0.2_linux-x64_bin.tar.gz
+        dest: /opt
+        remote_src: yes
+    - name: Download MVN package
+      get_url:
+        url: https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz
+        dest: /opt/
+    - name: Extract MVN package 
+      ansible.builtin.unarchive:
+        src: /opt/apache-maven-3.8.8-bin.tar.gz
+        dest: /opt
+        remote_src: yes
