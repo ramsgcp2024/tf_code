@@ -46,3 +46,4 @@ variable "instances" {
 variable "vm_user" {
   default = "ramsgcp23"
 }
+
